@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input onclick="Click1();" id="range1" type="range" value="70"><br>
+<input onclick="Click2();" id="range2" type="range" value="70"><br>
+<input onclick="Click3();" id="range3" type="range" value="70">
+</body>
+<script>
+    let flag1 = 1;
+    let flag2 = 1;
+    let flag3 = 1;
+
+    function Click1() {
+        let range1 = document.getElementById('range1');
+        let range3 = document.getElementById('range3');
+        if (flag1) {
+            range1.value = 0;
+            flag1 = 0;
+        } else {
+            if (flag2 && flag3) {
+                range3.value = 0;
+                flag3 = 0;
+            }
+            range1.value = 100
+            flag1 = 1;
+        }
+    }
+
+    function Click2() {
+        let range1 = document.getElementById('range1');
+        let range2 = document.getElementById('range2');
+        if (flag2) {
+            range2.value = 0;
+            flag2 = 0;
+        } else {
+            if (flag1 && flag3) {
+                range1.value = 0;
+                flag1 = 0;
+            }
+            range2.value = 100
+            flag2 = 1;
+        }
+    }
+
+    function Click3() {
+        let range1 = document.getElementById('range1');
+        let range3 = document.getElementById('range3');
+        if (flag3) {
+            range3.value = 0;
+            flag3 = 0;
+        } else {
+            if (flag2 && flag1) {
+                range1.value = 0;
+                flag1 = 0;
+            }
+            range3.value = 100
+            flag3 = 1;
+        }
+    }
+
+</script>
+</html>
